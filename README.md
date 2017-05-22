@@ -1,2 +1,2 @@
 # CSGBDQuerys
-## Questão 5 do trabalho de indices Da disciplina de CSGBD 
+## Questão 5 do trabalho de indices da disciplina de CSGBD 
