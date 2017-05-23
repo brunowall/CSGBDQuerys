@@ -8,12 +8,14 @@ public class Principal {
 	
 	
 	public static void main(String[] args) throws SQLException, IOException {
-		
+		Scanner sc = new Scanner(System.in);
 		Dao dao;
 		Runtime run = Runtime.getRuntime();
-		run.exec("sudo su \r\n 92040119 \r\n echo 3 > /proc/sys/vm/drop_caches \r\n service postgresql restart");
+		System.out.println("Digite a senha do root do seu sistema operacional");
+		String pass = sc.nextLine();
+		run.exec("sudo su \r\n"+pass+"\r\n echo 3 > /proc/sys/vm/drop_caches \r\n service postgresql restart");
 		System.out.println("digite 0 para consulta com indice e 1 para consulta sem indice");
-		Scanner sc = new Scanner(System.in);
+		
 		int valor = sc.nextInt();
 		System.out.println("Executando consulta ...");
 		switch (valor) {
