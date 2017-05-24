@@ -10,12 +10,9 @@ public class Principal {
 	public static void main(String[] args) throws SQLException, IOException {
 		Scanner sc = new Scanner(System.in);
 		Dao dao;
-		Runtime run = Runtime.getRuntime();
-		System.out.println("Digite a senha do root do seu sistema operacional");
-		String pass = sc.nextLine();	// senha do root para fazer a limpeza do cache
-		run.exec("sudo su \r\n"+pass+"\r\n echo 3 > /proc/sys/vm/drop_caches \r\n service postgresql restart");
-		System.out.println("digite 0 para consulta com indice e 1 para consulta sem indice");
+		Dao.clearCache();
 		
+		System.out.println("digite 0 para consulta com indice e 1 para consulta sem indice");
 		int valor = sc.nextInt();
 		System.out.println("Executando consulta ...");
 		switch (valor) {
@@ -34,5 +31,9 @@ public class Principal {
 			System.exit(1);
 		}
 		
+		
+		
 	}
+	
+
 }
